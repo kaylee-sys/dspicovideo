@@ -15,6 +15,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Clone TinyUSB dependency
+        run: |
+          mkdir -p libs
+          git clone https://github.com/hathach/tinyusb.git libs/tinyusb
+
       - name: Build Libraries (libtwl7 & libtwl9)
         run: |
           make -C libs/libtwl7
