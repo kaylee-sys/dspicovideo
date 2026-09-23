@@ -28,8 +28,8 @@ SOURCES		:=	source \
 INCLUDES	:=	source include build ../common \
 				../libs/tinyusb/src \
 				../platform \
-				../libs/libtwl/common/include \
-				../libs/libtwl/libtwl7/include \
+				../libs/libtwl \
+				../libs/libtwl/libtwl/include \
 				../libs/libtwl/include
 DATA		:=
 
