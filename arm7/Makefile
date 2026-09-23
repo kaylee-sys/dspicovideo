@@ -26,11 +26,13 @@ SOURCES		:=	source \
 				../../../libs/tinyusb/src/class/msc \
 				../../../libs/tinyusb/src/common
 INCLUDES	:=	source include build ../common \
-				../../../libs/tinyusb/src \
-				../../../platform \
-				../../../libs/libtwl/common/include \
-				../../../libs/libtwl/libtwl7/include \
-				../../../libs/libtwl/include
+				../libs/tinyusb/src \
+				../platform \
+				../libs/libtwl/common/include \
+				../libs/libtwl/libtwl7/include \
+				../libs/libtwl/include
+
+LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../libs/libtwl/libtwl7 $(CURDIR)/../libs/libtwl
 DATA		:=
 
 #---------------------------------------------------------------------------------
