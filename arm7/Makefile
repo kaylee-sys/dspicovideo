@@ -18,21 +18,19 @@ BUILD		:=	build
 SOURCES		:=	source \
 				../common/ipc \
 				source/ipcServices \
-				../../../platform \
-				../../../libs/tinyusb/src \
-				../../../libs/tinyusb/src/device \
-				../../../libs/tinyusb/src/class/audio \
-				../../../libs/tinyusb/src/class/cdc \
-				../../../libs/tinyusb/src/class/msc \
-				../../../libs/tinyusb/src/common
+				../platform \
+				../libs/tinyusb/src \
+				../libs/tinyusb/src/device \
+				../libs/tinyusb/src/class/audio \
+				../libs/tinyusb/src/class/cdc \
+				../libs/tinyusb/src/class/msc \
+				../libs/tinyusb/src/common
 INCLUDES	:=	source include build ../common \
 				../libs/tinyusb/src \
 				../platform \
 				../libs/libtwl/common/include \
 				../libs/libtwl/libtwl7/include \
 				../libs/libtwl/include
-
-LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../libs/libtwl/libtwl7 $(CURDIR)/../libs/libtwl
 DATA		:=
 
 #---------------------------------------------------------------------------------
@@ -59,7 +57,7 @@ LIBS	:=	-ltwl7 -lnds7
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../../../libs/libtwl/libtwl7 $(CURDIR)/../../../libs/libtwl
+LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../libs/libtwl/libtwl7 $(CURDIR)/../libs/libtwl
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
