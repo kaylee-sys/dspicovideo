@@ -15,12 +15,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Clone libtwl & TinyUSB dependencies
-        run: |
-          mkdir -p ../../libs
-          git clone https://github.com/Gericom/libtwl.git ../../libs/libtwl
-          git clone https://github.com/hathach/tinyusb.git ../../libs/tinyusb
-
       - name: Build NDS Firmware
         run: |
           make
