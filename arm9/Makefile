@@ -28,7 +28,7 @@ GRAPHICS 	:=  gfx
 ARCH	:=	-marm -mthumb-interwork -DLIBTWL_ARM9 -DARM9
 
 CFLAGS	:=	-g -Wall -O2\
- 			-march=armv5te -mtune=arm946e-s -fomit-frame-pointer\
+			-march=armv5te -mtune=arm946e-s -fomit-frame-pointer\
 			-ffunction-sections -fdata-sections\
 			-ffast-math \
 			-fno-devirtualize-speculatively \
@@ -54,7 +54,7 @@ LIBS	:=	-ltwl9 -lnds9
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../../../libs/libtwl/libtwl9 $(CURDIR)/../../../libs/libtwl/common
+LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../libs/libtwl/libtwl9 $(CURDIR)/../libs/libtwl/common
  
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -111,7 +111,6 @@ $(BUILD):
 clean:
 	@echo clean ...
 	@rm -fr $(BUILD) *.elf *.nds* *.bin 
- 
  
 #---------------------------------------------------------------------------------
 else
