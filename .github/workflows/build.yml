@@ -15,10 +15,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Clone TinyUSB dependency
+      - name: Build Libraries (libtwl7 & libtwl9)
         run: |
-          mkdir -p libs
-          git clone https://github.com/hathach/tinyusb.git libs/tinyusb
+          make -C libs/libtwl7
+          make -C libs/libtwl9
 
       - name: Build NDS Firmware
         run: |
@@ -29,3 +29,6 @@ jobs:
         with:
           path: "*.nds"
           name: dspicovideo-firmware
+```[cite: 1]
+
+Сохрани изменения в воркфлоу, сделай коммит и отправь на GitHub — теперь библиотеки соберутся перед компиляцией `arm7`/`arm9`, и ошибка `cannot find -ltwl7` исчезнет[cite: 1]!
