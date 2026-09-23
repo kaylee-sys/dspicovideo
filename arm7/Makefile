@@ -28,7 +28,8 @@ SOURCES		:=	source \
 INCLUDES	:=	source include build ../common \
 				../../../libs/tinyusb/src \
 				../../../platform \
-				../../../libs/libtwl/libtwl/include \
+				../../../libs/libtwl/common/include \
+				../../../libs/libtwl/libtwl7/include \
 				../../../libs/libtwl/include
 DATA		:=
 
@@ -56,7 +57,7 @@ LIBS	:=	-ltwl7 -lnds7
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../../../libs/libtwl/libtwl $(CURDIR)/../../../libs/libtwl
+LIBDIRS	:=	$(LIBNDS) $(CURDIR)/../../../libs/libtwl/libtwl7 $(CURDIR)/../../../libs/libtwl
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
