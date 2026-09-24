@@ -4,3 +4,6 @@
 [submodule "libs/libtwl"]
 	path = libs/libtwl
 	url = https://github.com/Gericom/libtwl
+[submodule "libtwl"]
+	path = libtwl
+	url = https://github.com/Gericom/libtwl

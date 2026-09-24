@@ -1,12 +1,15 @@
 #include <nds.h>
 #include <stdio.h>
+#include <stdint.h>
 
 // Размер кадра 256x192 в байтах (RGB555: 2 байта на пиксель = 98 304 байт)
 #define FRAME_SIZE (256 * 192 * 2)
 
-// Указатель на кадровый буфер, находящийся в ARM7 (gVideoFrameBuffer)
-// В DSpico / NDS буфер передается через общую память WRAM или IPC
-extern const u8 gVideoFrameBuffer[FRAME_SIZE];
+// Если буфер передается через Shared WRAM, лучше объявить его как указатель на абсолютный адрес 
+// или согласовать адрес с ARM7 через общую структуру / фиксированный участок памяти.
+// Пример (замени адрес на тот, который выделен у тебя под буфер в linker script или WRAM):
+#define SHARED_FRAME_BUFFER_ADDR 0x02380000 
+#define gVideoFrameBuffer ((const u8*)SHARED_FRAME_BUFFER_ADDR)
 
 void initVideo()
 {
@@ -51,7 +54,7 @@ int main(void)
             // Сбрасываем флаг приема
             REG_IPC_SYNC &= ~0x01;
 
-            // Копируем кадр из RAM в видеопамять через быстрый 32-битный DMA (канал 3)
+            // Копируем кадр из разделяемой памяти в видеопамять через быстрый 32-битный DMA (канал 3)
             dmaCopyWords(3, gVideoFrameBuffer, vramBuffer, FRAME_SIZE);
         }
     }
