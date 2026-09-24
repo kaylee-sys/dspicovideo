@@ -1,3 +1,9 @@
+#include <stdint.h>
+#include <stdbool.h>
+
+// Если в либе есть файл с базовыми типами libtwl, подключим его (проверь путь, если он отличается, но обычно это types.h или аналогичный):
+// #include <libtwl/types.h>
+
 #include "common.h"
 #include <libtwl/card/card.h>
 #include <libtwl/rtos/rtosIrq.h>
