@@ -1,3 +1,6 @@
+#include <stdint.h>
+#include <nds.h>
+
 #include "common.h"
 #include <libtwl/card/card.h>
 #include <libtwl/rtos/rtosIrq.h>
