@@ -17,8 +17,11 @@ jobs:
 
       - name: Extract TinyUSB
         run: |
-          mkdir -p libs/tinyusb
-          unzip -q libs/tinyusb.zip -d libs/tinyusb
+          mkdir -p libs/temp_extract
+          unzip -q libs/tinyusb.zip -d libs/temp_extract
+          rm -rf libs/tinyusb
+          mv libs/temp_extract/tinyusb libs/tinyusb
+          rm -rf libs/temp_extract
 
       - name: Build Libraries (libtwl7 & libtwl9)
         run: |
