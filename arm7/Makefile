@@ -15,15 +15,16 @@ include $(DEVKITARM)/ds_rules
 # all directories are relative to this makefile
 #---------------------------------------------------------------------------------
 BUILD		:=	build
-
-# Автоматически находим все папки внутри tinyusb/src, чтобы не прописывать каждую вручную
-TINYUSB_DIRS := $(shell find ../libs/tinyusb/src -type d)
-
 SOURCES		:=	source \
 				../common/ipc \
 				source/ipcServices \
 				../platform \
-				$(TINYUSB_DIRS)
+				../libs/tinyusb/src \
+				../libs/tinyusb/src/device \
+				../libs/tinyusb/src/class/audio \
+				../libs/tinyusb/src/class/cdc \
+				../libs/tinyusb/src/class/msc \
+				../libs/tinyusb/src/common
 
 INCLUDES	:=	source include build ../common \
 				../libs/tinyusb/src \
@@ -135,3 +136,6 @@ $(ARM7ELF)	:	$(OFILES)
 #---------------------------------------------------------------------------------------
 endif
 #---------------------------------------------------------------------------------------
+```[cite: 1]
+
+Замени файл `arm7/Makefile` этим кодом, сделай коммит и отправь на GitHub[cite: 1]. Теперь сборка не будет захватывать лишний мусор и пройдет корректно.
