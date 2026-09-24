@@ -18,9 +18,7 @@ jobs:
       - name: Extract TinyUSB
         run: |
           mkdir -p libs/tinyusb
-          unzip -q tinyusb.zip -d libs/tinyusb
-          # Если архив распаковывается вложенной папкой, можно поправить пути или перенести файлы, 
-          # главное чтобы libs/tinyusb/src существовал
+          unzip -q libs/tinyusb.zip -d libs/tinyusb
 
       - name: Build Libraries (libtwl7 & libtwl9)
         run: |
